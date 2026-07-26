@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "StoryGraph",
 	"behavior": "create",
-	"noteContentFormat": "![]({{selector:.book-cover img?src|unique|replace:'[\"':\" \"|replace:'\"]':\" \"}})\n\n##Description\n{{selector:.trix-content|first}}\n\n",
+	"noteContentFormat": "![]({{selector:.book-cover img?src|unique|replace:'[\"':\" \"|replace:'\"]':\" \"}})\n\n## Description\n{{selector:.trix-content|first}}\n\n",
 	"properties": [
 		{
 			"name": "categories",
