@@ -20,8 +20,8 @@
 			"type": "multitext"
 		},
 		{
-			"name": "genre",
-			"value": "{{selector:.book-page-tag-section > .text-teal-700|unique|wikilink|join}}",
+			"name": "tags",
+			"value": "{{selector:.book-page-tag-section > .text-teal-700|unique|join}}",
 			"type": "multitext"
 		},
 		{
@@ -48,11 +48,6 @@
 			"name": "created",
 			"value": "{{date}}",
 			"type": "date"
-		},
-		{
-			"name": "tags",
-			"value": "books, to-read",
-			"type": "multitext"
 		},
 		{
 			"name": "rating",
