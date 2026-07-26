@@ -11,7 +11,7 @@
 		},
 		{
 			"name": "title",
-			"value": "{{selector:.book-title-author-and-series h3|unique|replace:'[\\\"':\\\" \\\"|replace:'\\\"]':\\\" \\\"}}",
+			"value": "{{selector:.book-title-author-and-series h3|unique|replace:'[\\\"':\\\" \\\"|replace:'\\\"]':\\\" \\\"|trim}}",
 			"type": "text"
 		},
 		{
@@ -36,7 +36,7 @@
 		},
 		{
 			"name": "isbn",
-			"value": "{{selector:.edition-info p|first|replace:\\\"ISBN/UID:\\\":\\\"\\\"|join}}",
+			"value": "{{selector:.edition-info p|first|replace:\\\"ISBN/UID:\\\":\\\"\\\"|replace:\\\"  \\\":\\\"\\\"|join}}",
 			"type": "text"
 		},
 		{
