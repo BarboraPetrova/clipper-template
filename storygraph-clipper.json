@@ -1,0 +1,68 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "StoryGraph",
+	"behavior": "create",
+	"noteContentFormat": "![]({{selector:.book-cover img?src|unique|replace:'[\"':\" \"|replace:'\"]':\" \"}})\n\n##Description\n{{selector:.trix-content|first}}\n\n",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Books]]",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{selector:.book-title-author-and-series h3|unique|replace:'[\\\"':\\\" \\\"|replace:'\\\"]':\\\" \\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:.book-title-author-and-series p a|unique|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "genre",
+			"value": "{{selector:.book-page-tag-section > span:nth-child(-n+2)|unique|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "pages",
+			"value": "{{selector:.toggle-edition-info-link|first|replace:\\\" pages\\\":\\\"\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "year",
+			"value": "{{selector:.toggle-edition-info-link|last}}",
+			"type": "number"
+		},
+		{
+			"name": "isbn",
+			"value": "{{selector:.edition-info p|first|replace:\\\"ISBN/UID:\\\":\\\"\\\"|join}}",
+			"type": "text"
+		},
+		{
+			"name": "language",
+			"value": "{{selector:.edition-info p:nth-child(3)|replace:\\\"Language: \\\":\\\"\\\"|unique|join}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "tags",
+			"value": "books, to-read",
+			"type": "multitext"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"https://app.thestorygraph.com/books/"
+	],
+	"noteNameFormat": "{{selector:.book-title-author-and-series h3|unique|replace:\"[\":\" \"|replace:\"]\":\" \"}}",
+	"path": "6 - Full Notes"
+}
